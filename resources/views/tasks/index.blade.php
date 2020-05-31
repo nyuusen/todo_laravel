@@ -1,20 +1,6 @@
-<!doctype html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ToDo App</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
+@extends('layout')
 
-<body>
-<header>
-    <nav class="my-navbar">
-        <a href="/" class="my-nav-brand">ToDo App</a>
-    </nav>
-</header>
-<main>
+@section('content')
     <div class="container">
         <div class="row">
             <div class="col col-md-4">
@@ -41,7 +27,7 @@
                     <div class="panel-heading">タスク</div>
                     <div class="panel-body">
                         <div class="text-right">
-                            <a href="#" class="btn btn-default btn-block">
+                            <a href="{{ route('tasks.create', ['id' => $current_folder_id]) }}" class="btn btn-default btn-block">
                                 タスクを追加する
                             </a>
                         </div>
@@ -72,8 +58,4 @@
             </div>
         </div>
     </div>
-</main>
-
-</body>
-
-</html>
+@endsection
